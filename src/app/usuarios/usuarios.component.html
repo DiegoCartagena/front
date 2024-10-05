@@ -1,0 +1,37 @@
+
+<br>
+<div class="content">
+    <button class="btn btn-outline-success" style="float: right; margin-bottom: 5px;"  (click)="crear()" > Nuevo  <span > +</span></button>
+    <table class="table">
+        <thead class="table table-info" >
+          <tr >
+            <th scope="col">Id</th>
+            <th scope="col">Rut</th>
+            <th scope="col">nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Perfil</th>
+            <th scope="col" >acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let usuario of usuarios" >
+            <th scope="row" >{{usuario.id}}</th>
+            <td>{{usuario.rut}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.telefono}}</td>
+            <td>{{usuario.id_perfil}}</td>
+            <td>
+                <button class="btn btn-outline" mat-raised-button color="primary" (click)="editar(usuario)" > Editar</button>
+                <button class="btn btn-danger" style="margin-left: 5px;" (click)="eliminar(usuario.id)" > Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--Modal section-->
+
+
+  
+  

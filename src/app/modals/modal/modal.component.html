@@ -1,0 +1,299 @@
+<div>
+    <div  *ngIf="this.data.origen!='Crear'" tabindex="-1">
+        <div class="modal-dialog"  [ariaModal]="">
+            <div class="modal-content">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-dialog-close="">X</button>-->
+              <div class="modal-header">
+                <h3 class="modal-title" mat-dialog-title id="exampleModalLabel">{{this.data.titulo}}</h3>
+              </div>
+              <div class="modal-body" mat-dialog-content>
+                <div class="form" *ngFor="let data of form " style="width: 80%; align-content: center;">
+                    <div class=""  >
+                        <h3><strong>{{data.type}}</strong></h3>
+                        <input type="text" class="form-control" value="{{data.value}}" placeholder="{{data.value}}"/>
+                    </div>
+                </div>
+           
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" mat-dialog-close="" >Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="edit()">guardar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!--Modal Crear Receta-->
+      <div  *ngIf="this.data.origen=='Crear' && this.data.titulo=='Crear Receta'" tabindex="-1">
+        <div class="modal-dialog"  [ariaModal]="">
+            <div class="modal-content">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-dialog-close="">X</button>-->
+              <div class="modal-header">
+                <h3 class="modal-title" mat-dialog-title id="exampleModalLabel">{{this.data.titulo}}</h3>
+              </div>
+              <div class="modal-body" mat-dialog-content>
+                <form class="row"  action="post">
+                    <h3>Datos Personales</h3>
+                    <input
+                      type="text"
+                      name="nombrePaciente"
+                      placeholder="Nombre del Paciente"
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                      type="text"
+                      name="rutPaciente"
+                      placeholder="Rut del paciente"
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                    type="date"
+                    name="fecha"
+                    placeholder="Fecha Receta"
+                    required="required"
+                  />
+                  <hr>
+                  <hr>
+                  <h3 ><strong>Datos medicos</strong></h3>
+                  <h5>Diagnostico</h5>
+                    <textarea 
+                    name="diagnostico"
+                    cols="30" 
+                    rows="5"
+                    ></textarea>
+                    <h5>Medicamentos</h5>
+                    <textarea 
+                    name="medicamentos"
+                    cols="30" 
+                    rows="5"
+                    ></textarea>
+                    <hr>
+                    <hr>
+                    <h3>Datos Profesional</h3>
+                    <input
+                      type="text"
+                      name="nombreProfesional"
+                      placeholder="Nombre Especialista "
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                      type="text"
+                      name="rutProfesional"
+                      placeholder="Rut Especialista"
+                      required="required"
+                    />
+
+                </form>
+           
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" mat-dialog-close="">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="save()">Guardar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!--Crear Usuarios-->
+      <div  *ngIf="this.data.origen=='Crear' && this.data.titulo=='Crear Usuario'" tabindex="-1">
+        <div class="modal-dialog"  [ariaModal]="">
+            <div class="modal-content">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-dialog-close="">X</button>-->
+              <div class="modal-header">
+                <h3 class="modal-title" mat-dialog-title id="exampleModalLabel">{{this.data.titulo}}</h3>
+              </div>
+              <div class="modal-body" mat-dialog-content>
+                <form [formGroup]="newUser" class="row"  action="post">
+                    <h3>Datos Personales</h3>
+                    <input
+                    formControlName="rut"
+                      type="text"
+                      name="rut"
+                      placeholder="Rut del usuario"
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                    formControlName="nombre"
+                      type="text"
+                      name="nombre"
+                      placeholder="Nombre del Usuario"
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                    formControlName="aPaterno"
+                    type="text"
+                    name="aPaterno"
+                    placeholder="Apellido Paterno"
+                    required="required"
+                  />
+                  <hr>
+                  <input
+                  formControlName="aMaterno"
+                    type="text"
+                    name="aMaterno"
+                    placeholder="Apellido Materno"
+                    required="required"
+                    
+                  />
+                  <hr>
+                  <label for="perfil">Perfil</label>
+                  <select formControlName="id_perfil" class="form-control" name="perfil" id="perfil">
+                    <option value="0">Seleccione Perfil</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Profesional</option>
+                    <option value="3">Paciente</option>
+                    <option value="4">Supervisor</option>
+                  </select>
+                  <hr>
+                  <h3>Datos De Contacto</h3>
+                  <hr>
+                  <input
+                  formControlName="email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required="required"
+                  />
+                  <hr>
+                  <input
+                  formControlName="telefono"
+                    type="tel"
+                    name="telefono"
+                    placeholder="telefono"
+                    required="required"
+                  />
+                  <hr>
+                  <label for="estado">Estado</label>
+                  <select formControlName="estado" name="estado" class="form-control" id="estado">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                  </select>
+                    <hr>
+                    <hr>
+                    <input
+                    formControlName="password"
+                    type="password"
+                    name="password"
+                    placeholder="contraseña"
+                    required="required"
+                  />
+                    <hr>
+                    <input
+                    formControlName="password2"
+                    type="password"
+                    name="password2"
+                    placeholder="Confimacion de contraseña"
+                    required="required"
+                  />
+
+                </form>
+           
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" mat-dialog-close="">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="crearUsuario()">Guardar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!--crear pacientes-->
+      <div  *ngIf="this.data.origen=='Crear' && this.data.titulo=='Crear Paciente'" tabindex="-1">
+        <div class="modal-dialog"  [ariaModal]="">
+            <div class="modal-content">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-dialog-close="">X</button>-->
+              <div class="modal-header">
+                <h3 class="modal-title" mat-dialog-title id="exampleModalLabel">{{this.data.titulo}}</h3>
+              </div>
+              <div class="modal-body" mat-dialog-content>
+                <form class="row"  action="post">
+                    <h3>Datos Personales</h3>
+                    <input
+                      type="text"
+                      name="rut"
+                      placeholder="Rut del usuario"
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                      type="text"
+                      name="nombre"
+                      placeholder="Nombre del Usuario"
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                    type="text"
+                    name="aPaterno"
+                    placeholder="Apellido Paterno"
+                    required="required"
+                  />
+                  <hr>
+                  <input
+                    type="text"
+                    name="aMaterno"
+                    placeholder="Apellido Materno"
+                    required="required"
+                    
+                  />
+                  <hr>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required="required"
+                  />
+                  <hr>
+                  <input
+                    type="text"
+                    name="perfil"
+                    placeholder="Perfil"
+                    required="required"
+                  />
+                  <hr>
+                  <h3 ><strong>Datos medicos</strong></h3>
+                  <h5>Diagnostico</h5>
+                    <textarea 
+                    name="diagnostico"
+                    cols="30" 
+                    rows="5"
+                    ></textarea>
+                    <h5>Medicamentos</h5>
+                    <textarea 
+                    name="medicamentos"
+                    cols="30" 
+                    rows="5"
+                    ></textarea>
+                    <hr>
+                    <hr>
+                    <h3>Datos Profesional</h3>
+                    <input
+                      type="text"
+                      name="nombreProfesional"
+                      placeholder="Nombre Especialista "
+                      required="required"
+                    />
+                    <hr>
+                    <input
+                      type="text"
+                      name="rutProfesional"
+                      placeholder="Rut Especialista"
+                      required="required"
+                    />
+
+                </form>
+           
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" mat-dialog-close="">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="save()">Guardar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!--fin paciente-->
+</div>

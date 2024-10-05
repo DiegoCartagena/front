@@ -1,0 +1,37 @@
+
+<br>
+<div class="">
+    <button class="btn btn-outline-success" style="float: right; margin-bottom: 5px;" (click)="crear()" > Nueva Receta <span>+</span></button>
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Folio</th>
+            <th scope="col">Fecha Otorgada</th>
+            <th scope="col">Retenida</th>
+            <th scope="col">Especialista</th>
+            <th scope="col">Indicacion</th>
+            <th scope="col" >acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let receta of recetas" >
+            <th scope="row">{{receta.id}}</th>
+            <td>{{receta.id}}</td>
+            <td>{{receta.fecha}}</td>
+            <td>{{receta.retenida}}</td>
+            <td>{{receta.nombreProfesional}}</td>
+            <td>{{receta.medicamentos}}</td>
+            <td>
+                <button class="btn btn-outline" *ngIf="perfil=='1' || perfil=='2'" mat-raised-button color="primary" (click)="editar(receta)" > Editar</button>
+                <button class="btn btn-danger" style="margin-left: 5px;" *ngIf="perfil=='1'" (click)="eliminar(receta.id)" > Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--Modal section-->
+
+
+  
+  

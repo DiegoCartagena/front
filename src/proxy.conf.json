@@ -1,0 +1,6 @@
+{
+    "/": {
+    "target": "http://apimed.test",
+    "secure": false
+    }
+    }

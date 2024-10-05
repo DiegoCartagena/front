@@ -1,0 +1,165 @@
+
+<!--admin section-->
+<div *ngIf='perfil=="1"'>
+    <p>Bienvenido a MediCareSys  {{nombre}}</p>
+        <div class="row">
+            <!--users-->
+            <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;" (click)="navigate('usuarios')" >
+                <div class="card-header">
+                    <h2 class="card-tittle">Usuarios</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../assets/images/historial.jpg" alt="imagen Usuarios" class="card-img">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info" (click)="navigate('usuarios')">Usuarios</button>
+                </div>
+            </div>
+            <!--end-->
+            <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;" (click)="navigate('historial')" >
+                <div class="card-header">
+                    <h2 class="card-tittle">Ficha Clinica</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../assets/images/historial.jpg" alt="imagen Historial clinico" class="card-img">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info" (click)="navigate('historial')">Ficha clinica</button>
+                </div>
+            </div>
+            <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;">
+                <div class="card-header">
+                    <h2 class="card-tittle">Agenda</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../assets/images/agenda.png" alt="imagen Historial clinico" class="card-img">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info" (click)="navigate('agenda')">Agenda</button>
+                </div>
+            </div>
+            <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;">
+                <div class="card-header">
+                    <h2 class="card-tittle">Profesionales</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../assets/images/profesionales.jpg" alt="imagen Historial clinico" class="card-img">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info"(click)="navigate('profesionales')">click</button>
+                </div>
+            </div>
+            <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;">
+                <div class="card-header">
+                    <h2 class="card-tittle">Pacientes</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../assets/images/profesionales.jpg" alt="imagen Historial clinico" class="card-img">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info"(click)="navigate('pacientes')">click</button>
+                </div>
+            </div>
+            <div class="card col-sm-3">
+                <div class="card-header">
+                    <h2 class="card-tittle">Recetas</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../assets/images/historial.jpg" alt="imagen Usuarios" class="card-img">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info" (click)="navigate('recetas')">click</button>
+                </div>
+            </div>
+        </div>
+            <!--2da fila-->
+            <div class="row" style="margin-top: 10px;">
+                
+                <div class="card col-sm-3">
+                    <div class="card-header">
+                        <h2 class="card-tittle">Examenes</h2>
+                    </div>
+                    <div class="card-body">
+                        <img src="../assets/images/historial.jpg" alt="imagen Usuarios" class="card-img">
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-info" (click)="navigate('examenes')">click</button>
+                    </div>
+                </div>
+                
+            </div>  
+</div>
+<!--End Admin section-->
+<!--Pacient section-->
+<div class="container col-sm-16" *ngIf="perfil=='3'">
+    <p>Welcome paciente {{nombre}} </p>
+    <div class="row">
+        <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;" (click)="navigate('historial')" >
+            <div class="card-header">
+                <h2 class="card-tittle">Ficha Clinica</h2>
+            </div>
+            <div class="card-body">
+                <img src="../assets/images/historial.jpg" alt="imagen Historial clinico" class="card-img">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-info" (click)="navigate('historial')">Ir a Ficha clinica</button>
+            </div>
+        </div>
+        <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;">
+            <div class="card-header">
+                <h2 class="card-tittle">Agenda</h2>
+            </div>
+            <div class="card-body">
+                <img src="../assets/images/agenda.png" alt="imagen Historial clinico" class="card-img">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-info" (click)="navigate('agenda')">click</button>
+            </div>
+        </div>
+        <div class="card col-sm-3" style="margin-right:2px; margin-left: 4px;">
+            <div class="card-header">
+                <h2 class="card-tittle">Profesionales</h2>
+            </div>
+            <div class="card-body">
+                <img src="../assets/images/profesionales.jpg" alt="imagen Historial clinico" class="card-img">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-info"(click)="navigate('profesionales')">click</button>
+            </div>
+        </div>
+    </div>
+        <!--2da fila-->
+        <div class="row" style="margin-top: 10px;">
+            <div class="card col-sm-3">
+                <div class="card-header">
+                    <h2 class="card-tittle">Recetas</h2>
+                </div>
+                <div class="card-body">
+                    body
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info" (click)="navigate('recetas')">click</button>
+                </div>
+            </div>
+            <div class="card col-sm-3">
+                <div class="card-header">
+                    <h2 class="card-tittle">Examenes</h2>
+                </div>
+                <div class="card-body">
+                    body
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-info" (click)="navigate('examenes')">click</button>
+                </div>
+            </div>
+            
+        </div>
+
+
+</div>
+<!--End pacient section-->
+<!--Profesional section-->
+<div *ngIf="perfil=='2'" >
+    <p>welcome Profesional {{nombre}}</p>
+</div>
+<!--End Profesional section-->

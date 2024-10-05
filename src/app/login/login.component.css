@@ -49,12 +49,25 @@
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     cursor: pointer;
   }
+  .google-login-btn {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
-.main-content {
-  transition: margin-left 0.3s ease;
-  margin-left: 0;
-}
-
-.main-content.shift {
-  margin-left: 250px; /* Ajusta el margen izquierdo cuando el menú lateral está abierto */
-}
+  .google-login-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .google-login-btn:hover {
+    background-color: #f1f1f1;
+  }
+  

@@ -1,0 +1,44 @@
+
+<br>
+<br>
+<br><br><br>
+<div class="agenda-container">
+    <div class="left-panel">
+      <h3>Citas Pendientes</h3>
+      <ul>
+        <li *ngFor="let cita of citasPendientes">{{ cita }}</li>
+      </ul>
+  
+      <h3>Historial de Citas</h3>
+      <ul>
+        <li *ngFor="let cita of historialCitas">{{ cita }}</li>
+      </ul>
+    </div>
+    <div class="right-panel">
+      <h3>Calendario</h3>
+      <div class="calendar">
+        <div class="month">
+          <div class="month-header">{{ currentMonth | date: 'MMMM yyyy' }}</div>
+          <div class="days">
+            <div class="day" *ngFor="let day of daysInMonth"
+                 [class.active]="isSelectedDay(day)"
+                 (click)="selectDay(day)">
+              {{ day | date: 'd' }}
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div *ngIf="selectedDay">
+        <h4>Horarios para {{ selectedDay | date }}</h4>
+        <ul>
+          <li *ngFor="let horario of horarios" 
+              [class.selected]="isSelectedHorario(horario)"
+              (click)="selectHorario(horario)">
+            {{ horario }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>

@@ -1,0 +1,28 @@
+
+<br><br><br><br><br>
+<div class="videoconferencias-container">
+    <div class="left-panel">
+      <h3>Citas Pendientes</h3>
+      <ul>
+        <li *ngFor="let cita of citasPendientes">{{ cita }}</li>
+      </ul>
+  
+      <h3>Historial de Citas</h3>
+      <ul>
+        <li *ngFor="let cita of historialCitas">{{ cita }}</li>
+      </ul>
+    </div>
+    <div class="right-panel">
+      <h3>Videoconferencias</h3>
+      <div class="video-list">
+        <div class="video-item" *ngFor="let video of videoconferencias">
+          <div class="video-info">
+            <h4>{{ video.fecha | date: 'medium' }}</h4>
+            <p>{{ video.descripcion }}</p>
+          </div>
+          <button class="join-button">Unirse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

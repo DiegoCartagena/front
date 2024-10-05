@@ -1,0 +1,69 @@
+.agenda-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .left-panel, .right-panel {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .left-panel ul, .right-panel ul {
+    list-style-type: none;
+    padding: calc(center);
+  }
+  
+  .left-panel li, .right-panel li {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .left-panel li:hover, .right-panel li:hover {
+    background-color: #0996f5;
+  }
+  
+  .calendar {
+    border: 1px solid cyan;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffff;
+    width: 350px;
+    height: 350px;
+  }
+  
+  .month {
+    text-align: center;
+  }
+  
+  .month-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .day {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .day.active {
+    background-color: #0996f5;
+  }
+  .left-panel{
+      justify-content: center;
+  }
+  .right-panel{
+justify-content: center;
+  }

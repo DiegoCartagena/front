@@ -1,0 +1,78 @@
+<!--<nav class="navbar  navbar-expand-lg">
+  <div class="nav-header">
+    <a class="navbar-brand " href="index">MedCarSys</a>
+    <button class="navbar-toggler"  (click)="toggleSidebar()" data-toggle="collapse"  aria-controls="navbarSupportedContent" >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  
+    <div class="navbar-nav" name="navbarSupportedContent" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item  active">
+          <a class="nav-link"  href="index">Inicio </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="recetas">Recetas</a>
+        </li>
+        <li class="nav-item" *ngIf="perfil=='1'">
+          <a href="usuarios"  class="nav-link">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="perfil=='3'" href="profesionales">Profesionales</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="historial">Ficha Clinica</a>
+          </li>
+          <li *ngIf="perfil=='2'" class="nav-item">
+            <a class="nav-link" href="Pacientes">Pacientes</a>
+          </li> 
+      </ul>
+        
+        <button class="btn btn-outline-success ml-2" style="float: right;" type="submit">Search</button>    
+      </div>
+</nav>
+<br><br><br><br><br>-->
+<nav class="navbar">
+  <div class="navbar-header">
+    <button class="navbar-toggler" (click)="onToggleSidebar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a class="navbar-brand" style="margin-left: 10px;" href="#">MediCareSys</a>
+  </div>
+</nav>
+
+<div class="sidebar " [ngClass]="{'open': isSidebarOpen, 'close':!isSidebarOpen}">
+  <ul class="sidebar-nav">
+    <br><br>
+    <br>
+    <li class="sidebar-item  active">
+      <a class="sidebar-link"  href="index">Inicio </a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="recetas">Recetas</a>
+    </li>
+    <li class="sidebar-item" *ngIf="perfil=='1'">
+      <a href="usuarios"  class="sidebar-link">Usuarios</a>
+    </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" *ngIf="perfil=='3'" href="profesionales">Profesionales</a>
+    </li>
+    <li class="sidebar-item">
+        <a class="sidebar-link" href="historial">Ficha Clinica</a>
+      </li>
+      <li *ngIf="perfil=='2'" class="sidebar-item">
+        <a class="sidebar-link" href="Pacientes">Pacientes</a>
+      </li> 
+  </ul>
+</div>
+
+<div class="content" [ngClass]="{'shift': isSidebarOpen}">
+  <!-- Contenido principal de la aplicación -->
+</div>
+<br>
+<br><br><br>
